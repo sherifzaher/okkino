@@ -9,7 +9,7 @@ import { NestFactory } from '@nestjs/core'
 import { AppModule } from './app/app.module'
 import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify'
 import helmet from '@fastify/helmet'
-import {apiEnv} from "./environments/environment";
+import { apiEnv } from './environments/environment'
 
 const { isProd, api } = apiEnv
 

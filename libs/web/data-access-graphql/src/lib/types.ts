@@ -42,7 +42,7 @@ export type NullableStringFieldUpdateOperationsInput = {
 export type Query = {
   __typename?: 'Query';
   user: User;
-  users: Array<User>;
+  users: User[];
 };
 
 

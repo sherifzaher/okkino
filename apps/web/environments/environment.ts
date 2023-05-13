@@ -1,4 +1,4 @@
-import * as process from "process";
+import * as process from 'node:process'
 
 export const webEnv: IWebEnv = {
   isProd: process.env.OKKINO_ENV === 'production',
