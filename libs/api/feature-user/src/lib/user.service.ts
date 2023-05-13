@@ -15,22 +15,22 @@ export class UserService {
     const { data } = createOneUserArgs
     const saltOrRounds = 10
     const hashedPassword = await bcrypt.hash(data.password, saltOrRounds)
-    return this.prisma.user.create({ data: { ...data, password: hashedPassword } })
+    return this.prisma['user'].create({ data: { ...data, password: hashedPassword } })
   }
 
   findAll() {
-    return this.prisma.user.findMany()
+    return this.prisma['user'].findMany()
   }
 
   findOne(findUniqueUserArgs: FindUniqueUserArgs) {
-    return this.prisma.user.findUnique(findUniqueUserArgs)
+    return this.prisma['user'].findUnique(findUniqueUserArgs)
   }
 
   update(updateOneUserArgs: UpdateOneUserArgs) {
-    return this.prisma.user.update(updateOneUserArgs)
+    return this.prisma['user'].update(updateOneUserArgs)
   }
 
   remove(deleteOneUserArgs: DeleteOneUserArgs) {
-    return this.prisma.user.delete(deleteOneUserArgs)
+    return this.prisma['user'].delete(deleteOneUserArgs)
   }
 }
