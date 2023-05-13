@@ -6,18 +6,18 @@ import { gql } from 'graphql-request';
 export type GetUsersVariables = Types.Exact<{ [key: string]: never; }>;
 
 
-export type GetUsers = { __typename?: 'Query', users: { __typename?: 'User', id: string, email: string, name?: string | null }[] };
+export type GetUsers = { __typename?: 'Query', users: Array<{ __typename?: 'User', id: string, email: string, name?: string | null }> };
 
 
 export const GetUsersDocument = /*#__PURE__*/ gql`
-      query GetUsers {
-    users {
-      id
-      email
-      name
-    }
+    query GetUsers {
+  users {
+    id
+    email
+    name
   }
-`;
+}
+    `;
 
 export type SdkFunctionWrapper = <T>(action: (requestHeaders?:Record<string, string>) => Promise<T>, operationName: string, operationType?: string) => Promise<T>;
 
