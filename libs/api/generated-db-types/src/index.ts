@@ -48,9 +48,9 @@ export class IntFilter {
     @Field(() => Int, {nullable:true})
     equals?: number;
     @Field(() => [Int], {nullable:true})
-    in?: Array<number>;
+    in?: number[];
     @Field(() => [Int], {nullable:true})
-    notIn?: Array<number>;
+    notIn?: number[];
     @Field(() => Int, {nullable:true})
     lt?: number;
     @Field(() => Int, {nullable:true})
@@ -80,9 +80,9 @@ export class StringFilter {
     @Field(() => String, {nullable:true})
     equals?: string;
     @Field(() => [String], {nullable:true})
-    in?: Array<string>;
+    in?: string[];
     @Field(() => [String], {nullable:true})
-    notIn?: Array<string>;
+    notIn?: string[];
     @Field(() => String, {nullable:true})
     lt?: string;
     @Field(() => String, {nullable:true})
@@ -108,9 +108,9 @@ export class StringWithAggregatesFilter {
     @Field(() => String, {nullable:true})
     equals?: string;
     @Field(() => [String], {nullable:true})
-    in?: Array<string>;
+    in?: string[];
     @Field(() => [String], {nullable:true})
-    notIn?: Array<string>;
+    notIn?: string[];
     @Field(() => String, {nullable:true})
     lt?: string;
     @Field(() => String, {nullable:true})
@@ -152,7 +152,7 @@ export class CreateManyUserArgs {
     @Field(() => [UserCreateManyInput], {nullable:false})
     @Type(() => UserCreateManyInput)
     @ValidateNested()
-    data!: Array<UserCreateManyInput>;
+    data!: UserCreateManyInput[];
     @Field(() => Boolean, {nullable:true})
     skipDuplicates?: boolean;
 }
@@ -188,7 +188,7 @@ export class FindFirstUserOrThrowArgs {
     @ValidateNested()
     where?: InstanceType<typeof UserWhereInput>;
     @Field(() => [UserOrderByWithRelationInput], {nullable:true})
-    orderBy?: Array<UserOrderByWithRelationInput>;
+    orderBy?: UserOrderByWithRelationInput[];
     @Field(() => UserWhereUniqueInput, {nullable:true})
     cursor?: InstanceType<typeof UserWhereUniqueInput>;
     @Field(() => Int, {nullable:true})
@@ -196,7 +196,7 @@ export class FindFirstUserOrThrowArgs {
     @Field(() => Int, {nullable:true})
     skip?: number;
     @Field(() => [UserScalarFieldEnum], {nullable:true})
-    distinct?: Array<keyof typeof UserScalarFieldEnum>;
+    distinct?: (keyof typeof UserScalarFieldEnum)[];
 }
 
 @ArgsType()
@@ -206,7 +206,7 @@ export class FindFirstUserArgs {
     @ValidateNested()
     where?: InstanceType<typeof UserWhereInput>;
     @Field(() => [UserOrderByWithRelationInput], {nullable:true})
-    orderBy?: Array<UserOrderByWithRelationInput>;
+    orderBy?: UserOrderByWithRelationInput[];
     @Field(() => UserWhereUniqueInput, {nullable:true})
     cursor?: InstanceType<typeof UserWhereUniqueInput>;
     @Field(() => Int, {nullable:true})
@@ -214,7 +214,7 @@ export class FindFirstUserArgs {
     @Field(() => Int, {nullable:true})
     skip?: number;
     @Field(() => [UserScalarFieldEnum], {nullable:true})
-    distinct?: Array<keyof typeof UserScalarFieldEnum>;
+    distinct?: (keyof typeof UserScalarFieldEnum)[];
 }
 
 @ArgsType()
@@ -224,7 +224,7 @@ export class FindManyUserArgs {
     @ValidateNested()
     where?: InstanceType<typeof UserWhereInput>;
     @Field(() => [UserOrderByWithRelationInput], {nullable:true})
-    orderBy?: Array<UserOrderByWithRelationInput>;
+    orderBy?: UserOrderByWithRelationInput[];
     @Field(() => UserWhereUniqueInput, {nullable:true})
     cursor?: InstanceType<typeof UserWhereUniqueInput>;
     @Field(() => Int, {nullable:true})
@@ -232,7 +232,7 @@ export class FindManyUserArgs {
     @Field(() => Int, {nullable:true})
     skip?: number;
     @Field(() => [UserScalarFieldEnum], {nullable:true})
-    distinct?: Array<keyof typeof UserScalarFieldEnum>;
+    distinct?: (keyof typeof UserScalarFieldEnum)[];
 }
 
 @ArgsType()
@@ -296,7 +296,7 @@ export class UserAggregateArgs {
     @ValidateNested()
     where?: InstanceType<typeof UserWhereInput>;
     @Field(() => [UserOrderByWithRelationInput], {nullable:true})
-    orderBy?: Array<UserOrderByWithRelationInput>;
+    orderBy?: UserOrderByWithRelationInput[];
     @Field(() => UserWhereUniqueInput, {nullable:true})
     cursor?: InstanceType<typeof UserWhereUniqueInput>;
     @Field(() => Int, {nullable:true})
@@ -382,9 +382,9 @@ export class UserGroupByArgs {
     @ValidateNested()
     where?: InstanceType<typeof UserWhereInput>;
     @Field(() => [UserOrderByWithAggregationInput], {nullable:true})
-    orderBy?: Array<UserOrderByWithAggregationInput>;
+    orderBy?: UserOrderByWithAggregationInput[];
     @Field(() => [UserScalarFieldEnum], {nullable:false})
-    by!: Array<keyof typeof UserScalarFieldEnum>;
+    by!: (keyof typeof UserScalarFieldEnum)[];
     @Field(() => UserScalarWhereWithAggregatesInput, {nullable:true})
     having?: InstanceType<typeof UserScalarWhereWithAggregatesInput>;
     @Field(() => Int, {nullable:true})
@@ -522,11 +522,11 @@ export class UserOrderByWithRelationInput {
 @InputType()
 export class UserScalarWhereWithAggregatesInput {
     @Field(() => [UserScalarWhereWithAggregatesInput], {nullable:true})
-    AND?: Array<UserScalarWhereWithAggregatesInput>;
+    AND?: UserScalarWhereWithAggregatesInput[];
     @Field(() => [UserScalarWhereWithAggregatesInput], {nullable:true})
-    OR?: Array<UserScalarWhereWithAggregatesInput>;
+    OR?: UserScalarWhereWithAggregatesInput[];
     @Field(() => [UserScalarWhereWithAggregatesInput], {nullable:true})
-    NOT?: Array<UserScalarWhereWithAggregatesInput>;
+    NOT?: UserScalarWhereWithAggregatesInput[];
     @Field(() => StringWithAggregatesFilter, {nullable:true})
     id?: InstanceType<typeof StringWithAggregatesFilter>;
     @Field(() => StringWithAggregatesFilter, {nullable:true})
@@ -608,11 +608,11 @@ export class UserWhereUniqueInput {
 @InputType()
 export class UserWhereInput {
     @Field(() => [UserWhereInput], {nullable:true})
-    AND?: Array<UserWhereInput>;
+    AND?: UserWhereInput[];
     @Field(() => [UserWhereInput], {nullable:true})
-    OR?: Array<UserWhereInput>;
+    OR?: UserWhereInput[];
     @Field(() => [UserWhereInput], {nullable:true})
-    NOT?: Array<UserWhereInput>;
+    NOT?: UserWhereInput[];
     @Field(() => StringFilter, {nullable:true})
     id?: InstanceType<typeof StringFilter>;
     @Field(() => StringFilter, {nullable:true})
